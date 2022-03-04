@@ -2,23 +2,23 @@ import json
 import numpy as np
 from matplotlib import pyplot as plt
 
-
-input_file = open('getDataNotSorted.json', 'r')
-output_file = open('outputDataNotSorted.txt', 'w')
 '''
 input_file = open('getData.json', 'r')
 output_file = open('getData.txt', 'w')
 '''
 
-json_object = json.load(input_file)
+f = open("outputDataNotSorted.txt", "r")
+
+Lines = f.readlines()
 
 mylist = []
 
-for item in json_object:
-    data_int = item.get('time')
-    mylist.append(data_int)
-    data_str = str(data_int)
-    output_file.write(data_str+"\n")
+count = 0
+while(count < 1500):
+    for line in Lines:
+        data_int = float(line[:len(line)-2])
+        mylist.append(data_int)
+        count += 1
 
 x = np.arange(0, len(mylist))
 y = np.array(mylist)
@@ -27,7 +27,6 @@ plt.title("original data")
 plt.xlabel("# of data")
 plt.ylabel("time of data")
 plt.plot(x, y, '.')
-# plt.ylim(1639000000, 1640000000)
 plt.show()
 
 '''
