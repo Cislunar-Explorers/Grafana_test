@@ -2,7 +2,7 @@ import json
 import numpy as np
 from matplotlib import pyplot as plt
 
-input_file = open('outputDataNotSorted.json', 'r')
+input_file = open('getDataNotSorted.json', 'r')
 output_file = open('outputDataNotSorted.txt', 'w')
 '''
 input_file = open('getData.json', 'r')

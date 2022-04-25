@@ -10,7 +10,6 @@ output_file = open('getData.txt', 'w')
 f = open("outputDataNotSorted.txt", "r")
 
 Lines = f.readlines()
-
 mylist = []
 
 count = 0
@@ -20,13 +19,13 @@ while(count < 1500):
         mylist.append(data_int)
         count += 1
 
-x = np.arange(0, len(mylist))
-y = np.array(mylist)
+x = np.arange(5, len(mylist))
+y = np.array(mylist[5:len(mylist)])
 
 plt.title("original data")
-plt.xlabel("# of data")
+plt.xlabel("order of data")
 plt.ylabel("time of data")
-plt.plot(x, y, '.')
+plt.plot(x, y, '-')
 plt.show()
 
 '''
